@@ -7,7 +7,7 @@
   "authors": [],
   "contact": {},
   "license": "Apache-2.0",
-  "icon": "assets/col_coords/icon.png",
+  "icon": "assets/colcoords/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
