@@ -7,9 +7,9 @@ import net.minecraft.util.Identifier;
 
 public class ModConfigHandler {
     public static final ConfigClassHandler<ModConfig> HANDLER = ConfigClassHandler.createBuilder(ModConfig.class)
-            .id(Identifier.of("fastgetitem", "config"))
+            .id(Identifier.of("colcoords", "config"))
             .serializer(config -> GsonConfigSerializerBuilder.create(config)
-                    .setPath(FabricLoader.getInstance().getConfigDir().resolve("fastgetitem.json"))
+                    .setPath(FabricLoader.getInstance().getConfigDir().resolve("colcoords.json"))
                     .setJson5(true)
                     .build())
             .build();
