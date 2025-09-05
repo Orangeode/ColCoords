@@ -1,0 +1,11 @@
+{
+	isShowCoords: true,
+	colorOfText: -1,
+	relativeX: 0.0,
+	relativeY: 0.0,
+	isCoordsShadow: true,
+	numOfDecimalPoints: 1,
+	isShowTime: true,
+	isTimeShadow: true,
+	colorOfTime: -1
+}
