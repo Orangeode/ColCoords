@@ -1,0 +1,2 @@
+/locate structure minecraft:village_savanna
+/tp @s -256 ~ -256

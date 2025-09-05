@@ -1,4 +1,4 @@
-version:3955
+version:4082
 ao:true
 biomeBlendRadius:2
 enableVsync:true
@@ -17,16 +17,18 @@ gamma:0.5
 graphicsMode:1
 guiScale:0
 maxFps:120
+inactivityFpsLimit:"afk"
 mipmapLevels:4
 narrator:0
 particles:0
 reducedDebugInfo:false
 renderClouds:"true"
-renderDistance:12
+renderDistance:32
 simulationDistance:12
 screenEffectScale:1.0
 soundDevice:""
 autoJump:false
+rotateWithMinecart:false
 operatorItemsTab:false
 autoSuggestions:true
 chatColors:true
@@ -47,6 +49,7 @@ hideSplashTexts:false
 mouseSensitivity:0.5
 damageTiltStrength:1.0
 highContrast:false
+highContrastBlockOutline:false
 narratorHotkey:true
 resourcePacks:["fabric"]
 incompatibleResourcePacks:[]
@@ -78,7 +81,6 @@ glDebugVerbosity:1
 skipMultiplayerWarning:false
 hideMatchedNames:true
 joinedFirstServer:false
-hideBundleTutorial:false
 syncChunkWrites:false
 showAutosaveIndicator:true
 allowServerListing:true
@@ -121,9 +123,9 @@ key_key.hotbar.6:key.keyboard.6
 key_key.hotbar.7:key.keyboard.7
 key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
+key_key.modmenu.open_menu:key.keyboard.unknown
 key_net.orangeode.showhud:key.keyboard.apostrophe
 key_net.orangeode.showsettings:key.keyboard.m
-key_key.modmenu.open_menu:key.keyboard.unknown
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0
