@@ -14,22 +14,21 @@
 
 package net.orangeode.colcoords.client;
 
-import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
+//import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
 import net.orangeode.colcoords.client.config.ModConfig;
 import net.orangeode.colcoords.client.config.ModConfigHandler;
 
-public class CoordsRender implements HudElement {
+public class CoordsRender {
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
 
     private static final int DEFAULT_BOTTOM_OFFSET = 65;
 
-    private final ModConfig config = ModConfigHandler.HANDLER.instance();
+    private static final ModConfig config = ModConfigHandler.HANDLER.instance();
 
-    @Override
-    public void render(DrawContext context, RenderTickCounter renderTickCounter) {
+    public static void render(DrawContext context, RenderTickCounter renderTickCounter) {
         if (!shouldRender()) {
             return;
         }
@@ -47,14 +46,14 @@ public class CoordsRender implements HudElement {
         );
     }
 
-    private boolean shouldRender() {
+    private static boolean shouldRender() {
         return CLIENT.player != null
                 && CLIENT.world != null
                 && ColCoordsClient.isShowHud
                 && config.isShowCoords;
     }
 
-    private String buildCoordsText() {
+    private static String buildCoordsText() {
         double x = CLIENT.player.getX();
         double y = CLIENT.player.getY();
         double z = CLIENT.player.getZ();
@@ -68,7 +67,7 @@ public class CoordsRender implements HudElement {
         return String.format(format, x, y, z, yawTarget);
     }
 
-    private Position calculatePosition(String text) {
+    private static Position calculatePosition(String text) {
         int screenW = CLIENT.getWindow().getScaledWidth();
         int screenH = CLIENT.getWindow().getScaledHeight();
         int textW   = CLIENT.textRenderer.getWidth(text);

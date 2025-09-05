@@ -1,5 +1,5 @@
 {
-	isShowCoords: true,
+	isShowCoords: false,
 	colorOfText: -1,
 	relativeX: 0.0,
 	relativeY: 0.0,

@@ -14,7 +14,7 @@
 
 package net.orangeode.colcoords.client;
 
-import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
+//import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
@@ -22,15 +22,14 @@ import net.minecraft.text.Text;
 import net.orangeode.colcoords.client.config.ModConfig;
 import net.orangeode.colcoords.client.config.ModConfigHandler;
 
-public class TimeRender implements HudElement {
+public class TimeRender {
     private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
 
     private static final int DEFAULT_BOTTOM_OFFSET = 65;
 
-    private final ModConfig config = ModConfigHandler.HANDLER.instance();
+    private static final ModConfig config = ModConfigHandler.HANDLER.instance();
 
-    @Override
-    public void render(DrawContext context, RenderTickCounter renderTickCounter){
+    public static void render(DrawContext context, RenderTickCounter renderTickCounter){
         if (!shouldRender()) {
             return;
         }
@@ -48,14 +47,14 @@ public class TimeRender implements HudElement {
         );
     }
 
-    private boolean shouldRender() {
+    private static boolean shouldRender() {
         return CLIENT.player != null
                 && CLIENT.world != null
                 && ColCoordsClient.isShowHud
                 && config.isShowTime;
     }
 
-    private String buildTimeText() {
+    private static String buildTimeText() {
         assert CLIENT.world != null;
         long ticks = CLIENT.world.getTimeOfDay() % 24000;
         int hours   = (int) ((ticks / 1000 + 6) % 24);
@@ -68,7 +67,7 @@ public class TimeRender implements HudElement {
         );
     }
 
-    private Position calculatePosition(String text) {
+    private static Position calculatePosition(String text) {
         int screenW = CLIENT.getWindow().getScaledWidth();
         int screenH = CLIENT.getWindow().getScaledHeight();
         int textW   = CLIENT.textRenderer.getWidth(text);
