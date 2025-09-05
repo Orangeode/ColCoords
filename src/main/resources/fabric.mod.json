@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "col_coords",
+  "version": "${version}",
+  "name": "col coords",
+  "description": "This mod will display a coordinates with a change color abylitty",
+  "authors": [],
+  "contact": {},
+  "license": "Apache-2.0",
+  "icon": "assets/col_coords/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.orangeode.colcoords.client.ColCoordsClient"
+    ],
+    "modmenu": [
+      "net.orangeode.colcoords.client.config.ModMenuIntegration"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": ">=${minecraft_version}"
+  }
+}
